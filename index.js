@@ -1,6 +1,8 @@
-var a = 10;
-{
-  var a = 30;
-  console.log(a);
+function x() {
+  var a = 7;
+  return function y() {
+    console.log(a);
+  };
 }
-console.log(a);
+var z = x();
+z();
