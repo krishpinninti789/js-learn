@@ -36,16 +36,31 @@
 
 // x();
 
-function x() {
-  for (var i = 1; i <= 5; i++) {
-    function close(x) {
-      setTimeout(() => {
-        console.log(x);
-      }, x * 1000);
-    }
-    close(i);
+// function x() {
+//   for (var i = 1; i <= 5; i++) {
+//     function close(x) {
+//       setTimeout(() => {
+//         console.log(x);
+//       }, x * 1000);
+//     }
+//     close(i);
+//   }
+//   console.log("hi js");
+// }
+
+// x();
+
+function outer(b) {
+  var a = 10;
+  function inner() {
+    var a = 30;
+    console.log(a, b);
   }
-  console.log("hi js");
+  inner();
 }
 
-x();
+var a = 20;
+
+outer("Hello");
+
+console.log(a);
