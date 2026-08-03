@@ -50,17 +50,32 @@
 
 // x();
 
-function outer(b) {
-  var a = 10;
-  function inner() {
-    var a = 30;
-    console.log(a, b);
-  }
-  inner();
+// function outer(b) {
+//   var a = 10;
+//   function inner() {
+//     var a = 30;
+//     console.log(a, b);
+//   }
+//   inner();
+// }
+
+// var a = 20;
+
+// outer("Hello");
+
+// console.log(a);
+
+setTimeout(() => {
+  console.log("Hello");
+}, 5000);
+
+function x() {
+  console.log("x");
+  y();
 }
 
-var a = 20;
+function y() {
+  console.log("y");
+}
 
-outer("Hello");
-
-console.log(a);
+x();
