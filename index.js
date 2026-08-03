@@ -65,17 +65,30 @@
 
 // console.log(a);
 
-setTimeout(() => {
-  console.log("Hello");
-}, 5000);
+// setTimeout(() => {
+//   console.log("Hello");
+// }, 5000);
 
-function x() {
-  console.log("x");
-  y();
+// function x() {
+//   console.log("x");
+//   y();
+// }
+
+// function y() {
+//   console.log("y");
+// }
+
+// x();
+
+function createCounter() {
+  let count = 0;
+
+  return function () {
+    count++;
+    console.log(count);
+  };
 }
 
-function y() {
-  console.log("y");
-}
+const counter = createCounter();
 
-x();
+document.getElementById("clickme").addEventListener("click", counter);
