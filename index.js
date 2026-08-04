@@ -80,15 +80,35 @@
 
 // x();
 
-function createCounter() {
-  let count = 0;
+// function createCounter() {
+//   let count = 0;
 
-  return function () {
-    count++;
-    console.log(count);
-  };
+//   return function () {
+//     count++;
+//     console.log(count);
+//   };
+// }
+
+// const counter = createCounter();
+
+// document.getElementById("clickme").addEventListener("click", counter);
+
+console.log("start");
+
+function x() {
+  setTimeout(() => {
+    console.log("Set Timeout running");
+  }, 5000);
 }
 
-const counter = createCounter();
+x();
 
-document.getElementById("clickme").addEventListener("click", counter);
+console.log("End");
+
+let startDate = new Date().getTime();
+let endDate = startDate;
+while (endDate < startDate + 10000) {
+  endDate = new Date().getTime();
+}
+
+console.log("After 10 seconds");
