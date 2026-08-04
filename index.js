@@ -113,24 +113,46 @@
 
 // console.log("After 10 seconds");
 
-const area = (radius) => {
-  return Math.PI * radius * radius;
-};
+// const area = (radius) => {
+//   return Math.PI * radius * radius;
+// };
 
-const perimeter = (radius) => {
-  return Math.PI * 2 * radius;
-};
+// const perimeter = (radius) => {
+//   return Math.PI * 2 * radius;
+// };
 
-const radius = [1, 2, 3, 4];
+// const radius = [1, 2, 3, 4];
 
-const calculate = (logic, radius) => {
-  const result = [];
-  for (i = 0; i < radius.length; i++) {
-    result.push(logic(radius[i]));
-  }
-  return result;
-};
+// const calculate = (logic, radius) => {
+//   const result = [];
+//   for (i = 0; i < radius.length; i++) {
+//     result.push(logic(radius[i]));
+//   }
+//   return result;
+// };
 
-console.log(calculate(area, radius));
+// console.log(calculate(area, radius));
 
-console.log(calculate(perimeter, radius));
+// console.log(calculate(perimeter, radius));
+
+const nums = [1, 2, 3, 4, 100, 7];
+
+console.log(nums.map((num) => num.toString(2)));
+
+console.log(nums.filter((num) => num % 2 === 0));
+
+console.log(
+  nums.reduce((acc, curr) => {
+    acc = acc + curr;
+    return acc;
+  }, 0),
+);
+
+console.log(
+  nums.reduce((acc, curr) => {
+    if (curr > acc) {
+      acc = curr;
+    }
+    return acc;
+  }, -Infinity),
+);
