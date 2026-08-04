@@ -93,22 +93,44 @@
 
 // document.getElementById("clickme").addEventListener("click", counter);
 
-console.log("start");
+// console.log("start");
 
-function x() {
-  setTimeout(() => {
-    console.log("Set Timeout running");
-  }, 5000);
-}
+// function x() {
+//   setTimeout(() => {
+//     console.log("Set Timeout running");
+//   }, 5000);
+// }
 
-x();
+// x();
 
-console.log("End");
+// console.log("End");
 
-let startDate = new Date().getTime();
-let endDate = startDate;
-while (endDate < startDate + 10000) {
-  endDate = new Date().getTime();
-}
+// let startDate = new Date().getTime();
+// let endDate = startDate;
+// while (endDate < startDate + 10000) {
+//   endDate = new Date().getTime();
+// }
 
-console.log("After 10 seconds");
+// console.log("After 10 seconds");
+
+const area = (radius) => {
+  return Math.PI * radius * radius;
+};
+
+const perimeter = (radius) => {
+  return Math.PI * 2 * radius;
+};
+
+const radius = [1, 2, 3, 4];
+
+const calculate = (logic, radius) => {
+  const result = [];
+  for (i = 0; i < radius.length; i++) {
+    result.push(logic(radius[i]));
+  }
+  return result;
+};
+
+console.log(calculate(area, radius));
+
+console.log(calculate(perimeter, radius));
