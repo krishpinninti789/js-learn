@@ -185,6 +185,10 @@ const cart = [];
 
 const result = createOrder(cart);
 
-result.then((data) => {
-  console.log(data);
-});
+result
+  .then((data) => {
+    console.log(data);
+  })
+  .catch((err) => {
+    console.error(err);
+  });
