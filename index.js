@@ -157,12 +157,34 @@
 //   }, -Infinity),
 // );
 
-const result = fetch("https://api.github.com/users/krishpinninti789");
+// const result = fetch("https://api.github.com/users/krishpinninti789");
 
-result
-  .then((user) => {
-    user.json();
-  })
-  .then((data) => {
-    console.log(data);
+// result
+//   .then((user) => {
+//     user.json();
+//   })
+//   .then((data) => {
+//     console.log(data);
+//   });
+
+function createOrder(cartData) {
+  return new Promise((resolve, reject) => {
+    if (cartData.length === 0) {
+      reject("No cart is empty");
+    } else {
+      resolve({
+        paymentid: "3321",
+        cartData,
+      });
+    }
   });
+}
+
+// const cart = ["shoe", "kurta", "pencil"];
+const cart = [];
+
+const result = createOrder(cart);
+
+result.then((data) => {
+  console.log(data);
+});
