@@ -180,15 +180,28 @@ function createOrder(cartData) {
   });
 }
 
-// const cart = ["shoe", "kurta", "pencil"];
-const cart = [];
+function proceedToPayment(orderData) {
+  return new Promise((resolve, reject) => {
+    if (orderData.paymentid === "3321") {
+      resolve("Proceeding to payment");
+    } else {
+      reject(new Error("OrderID is invalid"));
+    }
+  });
+}
+
+const cart = ["shoe", "kurta", "pencil"];
+// const cart = [];
 
 const result = createOrder(cart);
 
 result
   .then((data) => {
-    console.log(data);
+    const res = proceedToPayment(data);
+    res.then((data) => {
+      console.log(data);
+    });
   })
   .catch((err) => {
-    console.error(err);
+    console.log(err);
   });
