@@ -135,24 +135,34 @@
 
 // console.log(calculate(perimeter, radius));
 
-const nums = [1, 2, 3, 4, 100, 7];
+// const nums = [1, 2, 3, 4, 100, 7];
 
-console.log(nums.map((num) => num.toString(2)));
+// console.log(nums.map((num) => num.toString(2)));
 
-console.log(nums.filter((num) => num % 2 === 0));
+// console.log(nums.filter((num) => num % 2 === 0));
 
-console.log(
-  nums.reduce((acc, curr) => {
-    acc = acc + curr;
-    return acc;
-  }, 0),
-);
+// console.log(
+//   nums.reduce((acc, curr) => {
+//     acc = acc + curr;
+//     return acc;
+//   }, 0),
+// );
 
-console.log(
-  nums.reduce((acc, curr) => {
-    if (curr > acc) {
-      acc = curr;
-    }
-    return acc;
-  }, -Infinity),
-);
+// console.log(
+//   nums.reduce((acc, curr) => {
+//     if (curr > acc) {
+//       acc = curr;
+//     }
+//     return acc;
+//   }, -Infinity),
+// );
+
+const result = fetch("https://api.github.com/users/krishpinninti789");
+
+result
+  .then((user) => {
+    user.json();
+  })
+  .then((data) => {
+    console.log(data);
+  });
