@@ -208,7 +208,7 @@
 
 function p1() {
   return new Promise((resolve, reject) => {
-    if (true) {
+    if (false) {
       resolve("Promise 1");
     } else {
       reject(new Error("Promise 1 rejected"));
@@ -218,7 +218,7 @@ function p1() {
 
 function p2() {
   return new Promise((resolve, reject) => {
-    if (true) {
+    if (false) {
       setTimeout(() => {
         resolve("Promise 2");
       }, 5000);
@@ -270,6 +270,6 @@ console.log(
   result4
     .then((data) => console.log(data))
     .catch((err) => {
-      console.log(err);
+      console.log(err.errors);
     }),
 );
