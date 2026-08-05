@@ -167,41 +167,109 @@
 //     console.log(data);
 //   });
 
-function createOrder(cartData) {
+// function createOrder(cartData) {
+//   return new Promise((resolve, reject) => {
+//     if (cartData.length === 0) {
+//       reject("No cart is empty");
+//     } else {
+//       resolve({
+//         paymentid: "3321",
+//         cartData,
+//       });
+//     }
+//   });
+// }
+
+// function proceedToPayment(orderData) {
+//   return new Promise((resolve, reject) => {
+//     if (orderData.paymentid === "3321") {
+//       resolve("Proceeding to payment");
+//     } else {
+//       reject(new Error("OrderID is invalid"));
+//     }
+//   });
+// }
+
+// const cart = ["shoe", "kurta", "pencil"];
+// // const cart = [];
+
+// const result = createOrder(cart);
+
+// result
+//   .then((data) => {
+//     const res = proceedToPayment(data);
+//     res.then((data) => {
+//       console.log(data);
+//     });
+//   })
+//   .catch((err) => {
+//     console.log(err);
+//   });
+
+function p1() {
   return new Promise((resolve, reject) => {
-    if (cartData.length === 0) {
-      reject("No cart is empty");
+    if (true) {
+      resolve("Promise 1");
     } else {
-      resolve({
-        paymentid: "3321",
-        cartData,
-      });
+      reject(new Error("Promise 1 rejected"));
     }
   });
 }
 
-function proceedToPayment(orderData) {
+function p2() {
   return new Promise((resolve, reject) => {
-    if (orderData.paymentid === "3321") {
-      resolve("Proceeding to payment");
+    if (true) {
+      setTimeout(() => {
+        resolve("Promise 2");
+      }, 5000);
     } else {
-      reject(new Error("OrderID is invalid"));
+      reject(new Error("Promise 2 rejected"));
     }
   });
 }
 
-const cart = ["shoe", "kurta", "pencil"];
-// const cart = [];
-
-const result = createOrder(cart);
-
-result
-  .then((data) => {
-    const res = proceedToPayment(data);
-    res.then((data) => {
-      console.log(data);
-    });
-  })
-  .catch((err) => {
-    console.log(err);
+function p3() {
+  return new Promise((resolve, reject) => {
+    if (false) {
+      resolve("Promise 3");
+    } else {
+      reject(new Error("Promise 3 rejected"));
+    }
   });
+}
+const result1 = Promise.all([p1(), p2(), p3()]);
+const result2 = Promise.allSettled([p1(), p2(), p3()]);
+const result3 = Promise.race([p1(), p2(), p3()]);
+const result4 = Promise.any([p1(), p2(), p3()]);
+
+console.log(
+  result1
+    .then((data) => console.log(data))
+    .catch((err) => {
+      console.log(err);
+    }),
+);
+
+console.log(
+  result2
+    .then((data) => console.log(data))
+    .catch((err) => {
+      console.log(err);
+    }),
+);
+
+console.log(
+  result3
+    .then((data) => console.log(data))
+    .catch((err) => {
+      console.log(err);
+    }),
+);
+
+console.log(
+  result4
+    .then((data) => console.log(data))
+    .catch((err) => {
+      console.log(err);
+    }),
+);
