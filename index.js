@@ -206,70 +206,75 @@
 //     console.log(err);
 //   });
 
-function p1() {
-  return new Promise((resolve, reject) => {
-    if (false) {
-      resolve("Promise 1");
-    } else {
-      reject(new Error("Promise 1 rejected"));
-    }
-  });
+// function p1() {
+//   return new Promise((resolve, reject) => {
+//     if (false) {
+//       resolve("Promise 1");
+//     } else {
+//       reject(new Error("Promise 1 rejected"));
+//     }
+//   });
+// }
+
+// function p2() {
+//   return new Promise((resolve, reject) => {
+//     if (false) {
+//       setTimeout(() => {
+//         resolve("Promise 2");
+//       }, 5000);
+//     } else {
+//       reject(new Error("Promise 2 rejected"));
+//     }
+//   });
+// }
+
+// function p3() {
+//   return new Promise((resolve, reject) => {
+//     if (false) {
+//       resolve("Promise 3");
+//     } else {
+//       reject(new Error("Promise 3 rejected"));
+//     }
+//   });
+// }
+// const result1 = Promise.all([p1(), p2(), p3()]);
+// const result2 = Promise.allSettled([p1(), p2(), p3()]);
+// const result3 = Promise.race([p1(), p2(), p3()]);
+// const result4 = Promise.any([p1(), p2(), p3()]);
+
+// console.log(
+//   result1
+//     .then((data) => console.log(data))
+//     .catch((err) => {
+//       console.log(err);
+//     }),
+// );
+
+// console.log(
+//   result2
+//     .then((data) => console.log(data))
+//     .catch((err) => {
+//       console.log(err);
+//     }),
+// );
+
+// console.log(
+//   result3
+//     .then((data) => console.log(data))
+//     .catch((err) => {
+//       console.log(err);
+//     }),
+// );
+
+// console.log(
+//   result4
+//     .then((data) => console.log(data))
+//     .catch((err) => {
+//       console.log(err.errors);
+//     }),
+// );
+
+async function getData() {
+  return "Hello";
 }
-
-function p2() {
-  return new Promise((resolve, reject) => {
-    if (false) {
-      setTimeout(() => {
-        resolve("Promise 2");
-      }, 5000);
-    } else {
-      reject(new Error("Promise 2 rejected"));
-    }
-  });
-}
-
-function p3() {
-  return new Promise((resolve, reject) => {
-    if (false) {
-      resolve("Promise 3");
-    } else {
-      reject(new Error("Promise 3 rejected"));
-    }
-  });
-}
-const result1 = Promise.all([p1(), p2(), p3()]);
-const result2 = Promise.allSettled([p1(), p2(), p3()]);
-const result3 = Promise.race([p1(), p2(), p3()]);
-const result4 = Promise.any([p1(), p2(), p3()]);
-
-console.log(
-  result1
-    .then((data) => console.log(data))
-    .catch((err) => {
-      console.log(err);
-    }),
-);
-
-console.log(
-  result2
-    .then((data) => console.log(data))
-    .catch((err) => {
-      console.log(err);
-    }),
-);
-
-console.log(
-  result3
-    .then((data) => console.log(data))
-    .catch((err) => {
-      console.log(err);
-    }),
-);
-
-console.log(
-  result4
-    .then((data) => console.log(data))
-    .catch((err) => {
-      console.log(err.errors);
-    }),
-);
+getData().then((res) => console.log(res));
