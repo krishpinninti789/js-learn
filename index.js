@@ -274,7 +274,25 @@
 //     }),
 // );
 
-async function getData() {
-  return "Hello";
+// async function getData() {
+//   return "Hello";
+// }
+// getData().then((res) => console.log(res));
+
+function promise1() {
+  return new Promise((res, rej) => {
+    setTimeout(() => {
+      res("Hello");
+    }, 4000);
+  });
 }
-getData().then((res) => console.log(res));
+
+async function exec() {
+  const p1 = await promise1();
+  console.log("Hello royyyy");
+
+  const p2 = await promise1();
+  console.log("Hello 2nd time");
+}
+
+exec();
