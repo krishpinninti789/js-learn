@@ -279,20 +279,28 @@
 // }
 // getData().then((res) => console.log(res));
 
-function promise1() {
-  return new Promise((res, rej) => {
-    setTimeout(() => {
-      res("Hello");
-    }, 4000);
-  });
-}
+// function promise1() {
+//   return new Promise((res, rej) => {
+//     setTimeout(() => {
+//       res("Hello");
+//     }, 4000);
+//   });
+// }
 
-async function exec() {
-  const p1 = await promise1();
-  console.log("Hello royyyy");
+// async function exec() {
+//   const p1 = await promise1();
+//   console.log("Hello royyyy");
 
-  const p2 = await promise1();
-  console.log("Hello 2nd time");
-}
+//   const p2 = await promise1();
+//   console.log("Hello 2nd time");
+// }
 
-exec();
+// exec();
+
+const fetchData = async () => {
+  const data = await fetch("https://api.github.com/users/krishpinninti789");
+  const jsonValue = await data.json();
+  console.log(jsonValue);
+};
+
+fetchData();
