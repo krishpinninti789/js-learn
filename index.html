@@ -7,7 +7,16 @@
   </head>
   <body>
     This is js learnings
-    <button id="clickme">Click me</button>
+    <button
+      id="clickme"
+      onclick="
+        {
+          alert(this.tagName);
+        }
+      "
+    >
+      Click me
+    </button>
     <script src="index.js"></script>
   </body>
 </html>
