@@ -305,12 +305,25 @@
 
 // fetchData();
 
-"use strict";
+// "use strict";
 
-console.log(this);
+// console.log(this);
 
-function x() {
-  console.log(this);
-}
+// function x() {
+//   console.log(this);
+// }
 
-window.x();
+// window.x();
+
+const student = {
+  name: "Kittu",
+  printName: function () {
+    console.log(this.name);
+  },
+};
+
+const student2 = {
+  name: "Vamsi",
+};
+
+student.printName.call(student2);
