@@ -297,10 +297,17 @@
 
 // exec();
 
-const fetchData = async () => {
-  const data = await fetch("https://api.github.com/users/krishpinninti789");
-  const jsonValue = await data.json();
-  console.log(jsonValue);
-};
+// const fetchData = async () => {
+//   const data = await fetch("https://api.github.com/users/krishpinninti789");
+//   const jsonValue = await data.json();
+//   console.log(jsonValue);
+// };
 
-fetchData();
+// fetchData();
+
+console.log(this);
+
+function x() {
+  console.log(this);
+}
+x();
