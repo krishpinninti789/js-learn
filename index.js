@@ -305,6 +305,8 @@
 
 // fetchData();
 
+"use strict";
+
 console.log(this);
 
 function x() {
