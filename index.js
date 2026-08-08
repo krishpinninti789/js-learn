@@ -328,4 +328,4 @@ const student2 = {
 
 student.printName.call(student2);
 
-student.printName()
+student.printName
