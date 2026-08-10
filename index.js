@@ -345,4 +345,6 @@ let name2 = {
   lastName: "Kumar",
 };
 
-name.printName.call(name2, "Banglore");
+// name.printName.call(name2, "Banglore");
+
+name.printName.apply(name2, ["Hyderabad"]);
