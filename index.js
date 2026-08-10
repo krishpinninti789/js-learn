@@ -327,6 +327,7 @@
 // };
 
 // student.printName.call(student2);
+// student.printName.call(student2);
 
 let firstName = "Raj";
 
