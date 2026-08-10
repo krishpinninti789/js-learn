@@ -315,15 +315,33 @@
 
 // window.x();
 
-const student = {
-  name: "Kittu",
-  printName: function () {
-    console.log(this.name);
+// const student = {
+//   name: "Kittu",
+//   printName: function () {
+//     console.log(this.name);
+//   },
+// };
+
+// const student2 = {
+//   name: "Vamsi",
+// };
+
+// student.printName.call(student2);
+
+let firstName = "Raj";
+
+let name = {
+  firstName: "Kittu",
+  lastName: "Rao",
+  printName: function (city) {
+    let firstName = "Raj";
+    console.log(this.firstName + " " + this.lastName + "from" + city);
   },
 };
 
-const student2 = {
-  name: "Vamsi",
+let name2 = {
+  firstName: "Ramesh",
+  lastName: "Kumar",
 };
 
-student.printName.call(student2);
+name.printName.call(name2, "Banglore");
