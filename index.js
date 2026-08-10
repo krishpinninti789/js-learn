@@ -347,4 +347,8 @@ let name2 = {
 
 // name.printName.call(name2, "Banglore");
 
-name.printName.apply(name2, ["Hyderabad"]);
+// name.printName.apply(name2, ["Hyderabad"]);
+
+let nameFunction = name.printName.bind(name2, "Sikkim");
+
+nameFunction();
