@@ -363,10 +363,35 @@
 
 // multiplyByTwo(50);
 
-function multiply(x) {
-  function dointo(y) {
-    console.log(x * y);
-  }
-  dointo(2);
-}
-multiply(5);
+// function multiply(x) {
+//   function dointo(y) {
+//     console.log(x * y);
+//   }
+//   dointo(2);
+// }
+// multiply(5);
+
+// polyfill for the bind
+
+let person = {
+  firstName: "Kittu",
+  lastName: "Rao",
+};
+
+let printName = function () {
+  console.log(this.firstName + " " + this.lastName);
+};
+
+let printName2 = printName.bind(person);
+// printName2();
+
+Function.prototype.myBind = function (...args) {
+  let obj = this;
+  params = args.slice(1);
+  return function (...args2) {
+    obj.apply(args[0], [...params, ...args2]);
+  };
+};
+
+let printName3 = printName.myBind(person);
+printName3();
