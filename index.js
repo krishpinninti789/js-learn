@@ -329,26 +329,34 @@
 // student.printName.call(student2);
 // student.printName.call(student2);
 
-let firstName = "Raj";
+// let firstName = "Raj";
 
-let name = {
-  firstName: "Kittu",
-  lastName: "Rao",
-  printName: function (city) {
-    let firstName = "Raj";
-    console.log(this.firstName + " " + this.lastName + "from" + city);
-  },
-};
+// let name = {
+//   firstName: "Kittu",
+//   lastName: "Rao",
+//   printName: function (city) {
+//     let firstName = "Raj";
+//     console.log(this.firstName + " " + this.lastName + "from" + city);
+//   },
+// };
 
-let name2 = {
-  firstName: "Ramesh",
-  lastName: "Kumar",
-};
+// let name2 = {
+//   firstName: "Ramesh",
+//   lastName: "Kumar",
+// };
 
 // name.printName.call(name2, "Banglore");
 
 // name.printName.apply(name2, ["Hyderabad"]);
 
-let nameFunction = name.printName.bind(name2, "Sikkim");
+// let nameFunction = name.printName.bind(name2, "Sikkim");
 
-nameFunction();
+// nameFunction();
+
+let multiply = function (x, y) {
+  console.log(x * y);
+};
+
+let multiplyByTwo = multiply.bind(this, 2);
+
+multiplyByTwo(50);
