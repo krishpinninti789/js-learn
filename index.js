@@ -373,25 +373,53 @@
 
 // polyfill for the bind
 
-let person = {
-  firstName: "Kittu",
-  lastName: "Rao",
-};
+// let person = {
+//   firstName: "Kittu",
+//   lastName: "Rao",
+// };
 
-let printName = function () {
-  console.log(this.firstName + " " + this.lastName);
-};
+// let printName = function (status) {
+//   console.log(this.firstName + " " + this.lastName + status);
+// };
 
-let printName2 = printName.bind(person);
+// let printName2 = printName.bind(person);
 // printName2();
 
-Function.prototype.myBind = function (...args) {
-  let obj = this;
-  params = args.slice(1);
-  return function (...args2) {
-    obj.apply(args[0], [...params, ...args2]);
-  };
+// Function.prototype.myBind = function (...args) {
+//   let obj = this;
+//   params = args.slice(1);
+//   return function (...args2) {
+//     obj.apply(args[0], [...params, ...args2]);
+//   };
+// };
+
+// Function.prototype.myBind = function (...args) {
+//   console.log(this, ...args);
+//   let fn = this;
+//   return function (...args2) {
+//     fn.apply(...args, [...args2]);
+//   };
+// };
+
+// let printName3 = printName.myBind(person);
+// printName3("ok");
+
+let name = {
+  firstName: "Kittu",
+  lastName: "Babu",
+  myFunction: function () {
+    console.log(this.firstName + " " + this.lastName);
+  },
 };
 
-let printName3 = printName.myBind(person);
-printName3();
+let name2 = {
+  firstName: "Ganesh",
+  lastName: "Murthy",
+};
+
+Function.prototype.myCall = function (...args) {
+  let obj = this;
+  obj.apply(...args);
+};
+
+name.myFunction.myCall(name2);
