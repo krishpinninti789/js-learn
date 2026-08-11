@@ -353,10 +353,20 @@
 
 // nameFunction();
 
-let multiply = function (x, y) {
-  console.log(x * y);
-};
+// currying using bind
 
-let multiplyByTwo = multiply.bind(this, 2);
+// let multiply = function (x, y) {
+//   console.log(x * y);
+// };
 
-multiplyByTwo(50);
+// let multiplyByTwo = multiply.bind(this, 2);
+
+// multiplyByTwo(50);
+
+function multiply(x) {
+  function dointo(y) {
+    console.log(x * y);
+  }
+  dointo(2);
+}
+multiply(5);
