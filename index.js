@@ -427,6 +427,9 @@
 let obj1 = {
   fn: "Kittu",
   ln: "Babu",
+  x: function () {
+    console.log(this.fn);
+  },
 };
 
 let obj2 = {
