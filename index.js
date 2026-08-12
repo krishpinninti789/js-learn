@@ -404,22 +404,33 @@
 // let printName3 = printName.myBind(person);
 // printName3("ok");
 
-let name = {
-  firstName: "Kittu",
-  lastName: "Babu",
-  myFunction: function () {
-    console.log(this.firstName + " " + this.lastName);
-  },
+// let name = {
+//   firstName: "Kittu",
+//   lastName: "Babu",
+//   myFunction: function () {
+//     console.log(this.firstName + " " + this.lastName);
+//   },
+// };
+
+// let name2 = {
+//   firstName: "Ganesh",
+//   lastName: "Murthy",
+// };
+
+// Function.prototype.myCall = function (...args) {
+//   let obj = this;
+//   obj.apply(...args);
+// };
+
+// name.myFunction.myCall(name2);
+
+let obj1 = {
+  fn: "Kittu",
+  ln: "Babu",
 };
 
-let name2 = {
-  firstName: "Ganesh",
-  lastName: "Murthy",
+let obj2 = {
+  fn: "Ramu",
 };
 
-Function.prototype.myCall = function (...args) {
-  let obj = this;
-  obj.apply(...args);
-};
-
-name.myFunction.myCall(name2);
+obj2.__proto__ = obj1;
