@@ -438,27 +438,44 @@
 
 // obj2.__proto__ = obj1;
 
-document.querySelector("#grandParent").addEventListener(
-  "click",
-  () => {
-    console.log("Grandparent");
-  },
-  false,
-);
+// document.querySelector("#grandParent").addEventListener(
+//   "click",
+//   () => {
+//     console.log("Grandparent");
+//   },
+//   false,
+// );
 
-document.querySelector("#parent").addEventListener(
-  "click",
-  (e) => {
-    console.log("parent");
-    e.stopPropagation();
-  },
-  true,
-);
+// document.querySelector("#parent").addEventListener(
+//   "click",
+//   (e) => {
+//     console.log("parent");
+//     e.stopPropagation();
+//   },
+//   true,
+// );
 
-document.querySelector("#child").addEventListener(
-  "click",
-  () => {
-    console.log("child");
-  },
-  false,
-);
+// document.querySelector("#child").addEventListener(
+//   "click",
+//   () => {
+//     console.log("child");
+//   },
+//   false,
+// );
+
+const btn = document.querySelector("#btn");
+
+document.addEventListener("userClicked", (event) => {
+  console.log("Custom event received!");
+  console.log("Data:", event.detail);
+});
+
+btn.addEventListener("click", () => {
+  const customEvent = new CustomEvent("userClicked", {
+    detail: {
+      name: "Kittu",
+      message: "Button was clicked",
+    },
+  });
+  document.dispatchEvent(customEvent);
+});
