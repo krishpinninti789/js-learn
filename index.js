@@ -424,16 +424,41 @@
 
 // name.myFunction.myCall(name2);
 
-let obj1 = {
-  fn: "Kittu",
-  ln: "Babu",
-  x: function () {
-    console.log(this.fn);
+// let obj1 = {
+//   fn: "Kittu",
+//   ln: "Babu",
+//   x: function () {
+//     console.log(this.fn);
+//   },
+// };
+
+// let obj2 = {
+//   fn: "Ramu",
+// };
+
+// obj2.__proto__ = obj1;
+
+document.querySelector("#grandParent").addEventListener(
+  "click",
+  () => {
+    console.log("Grandparent");
   },
-};
+  false,
+);
 
-let obj2 = {
-  fn: "Ramu",
-};
+document.querySelector("#parent").addEventListener(
+  "click",
+  (e) => {
+    console.log("parent");
+    e.stopPropagation();
+  },
+  true,
+);
 
-obj2.__proto__ = obj1;
+document.querySelector("#child").addEventListener(
+  "click",
+  () => {
+    console.log("child");
+  },
+  false,
+);
