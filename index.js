@@ -479,3 +479,5 @@ btn.addEventListener("click", () => {
   });
   document.dispatchEvent(customEvent);
 });
+
+console.log(document)
