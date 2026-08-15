@@ -485,8 +485,27 @@
 // });
 // console.log(document)
 
-document.querySelector("#pan").addEventListener("keyup", (e) => {
-  if (e.target.dataset.uppercase != undefined) {
-    e.target.value = e.target.value.toUpperCase();
-  }
-});
+// document.querySelector("#pan").addEventListener("keyup", (e) => {
+//   if (e.target.dataset.uppercase != undefined) {
+//     e.target.value = e.target.value.toUpperCase();
+//   }
+// });
+
+let counter = 0;
+const getData = () => {
+  console.log("Fetching the data", counter++);
+};
+
+const doDebounce = function (fn, delay) {
+  let timer;
+  return function () {
+    let context = this;
+    args = arguments;
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      getData.apply(context, args);
+    }, delay);
+  };
+};
+
+const betterFn = doDebounce(getData, 300);
