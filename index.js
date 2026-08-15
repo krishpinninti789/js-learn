@@ -463,19 +463,23 @@
 //   false,
 // );
 
-const btn = document.querySelector("#btn");
+// const btn = document.querySelector("#btn");
 
-document.addEventListener("userClicked", (event) => {
-  console.log("Custom event received!");
-  console.log("Data:", event.detail);
-});
+// document.addEventListener("userClicked", (event) => {
+//   console.log("Custom event received!");
+//   console.log("Data:", event.detail);
+// });
 
-btn.addEventListener("click", () => {
-  const customEvent = new CustomEvent("userClicked", {
-    detail: {
-      name: "Kittu",
-      message: "Button was clicked",
-    },
-  });
-  document.dispatchEvent(customEvent);
+// btn.addEventListener("click", () => {
+//   const customEvent = new CustomEvent("userClicked", {
+//     detail: {
+//       name: "Kittu",
+//       message: "Button was clicked",
+//     },
+//   });
+//   document.dispatchEvent(customEvent);
+// });
+
+document.querySelector("#category").addEventListener("click", (e) => {
+  console.log(e.target);
 });
