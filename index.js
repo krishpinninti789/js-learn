@@ -532,4 +532,6 @@ const doThrottle = function (fn, delay) {
   };
 };
 
-const betterFn = doThrottle(getData, 300);
+const betterFn = doThrottle(getData, 3000);
+
+window.addEventListener("resize", betterFn);
