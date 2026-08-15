@@ -491,21 +491,45 @@
 //   }
 // });
 
+// let counter = 0;
+// const getData = () => {
+//   console.log("Fetching the data", counter++);
+// };
+
+// const doDebounce = function (fn, delay) {
+//   let timer;
+//   return function () {
+//     let context = this;
+//     args = arguments;
+//     clearTimeout(timer);
+//     timer = setTimeout(() => {
+//       getData.apply(context, args);
+//     }, delay);
+//   };
+// };
+
+// const betterFn = doDebounce(getData, 300);
+
 let counter = 0;
 const getData = () => {
   console.log("Fetching the data", counter++);
 };
 
-const doDebounce = function (fn, delay) {
-  let timer;
-  return function () {
-    let context = this;
-    args = arguments;
-    clearTimeout(timer);
+const doThrottle = function (fn, delay) {
+  let timer = null;
+
+  return function (...args) {
+    const context = this;
+
+    if (timer) {
+      return;
+    }
+
     timer = setTimeout(() => {
-      getData.apply(context, args);
+      fn.apply(context, args);
+      timer = null;
     }, delay);
   };
 };
 
-const betterFn = doDebounce(getData, 300);
+const betterFn = doThrottle(getData, 300);
