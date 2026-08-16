@@ -536,13 +536,24 @@
 
 // window.addEventListener("resize", betterFn);
 
-const userData = {
-  firstName: "Kittu",
-  lastName: "Babu",
+// const userData = {
+//   firstName: "Kittu",
+//   lastName: "Babu",
+// };
+
+// localStorage.setItem("UserData", JSON.stringify(userData));
+
+// const storageObj = localStorage.getItem("UserData");
+
+// console.log(JSON.parse(storageObj));
+
+let sum = (a) => {
+  return (b) => {
+    if (b) {
+      return sum(a + b);
+    }
+    return a;
+  };
 };
 
-localStorage.setItem("UserData", JSON.stringify(userData));
-
-const storageObj = localStorage.getItem("UserData");
-
-console.log(JSON.parse(storageObj));
+console.log(sum(1)(2)(5)());
