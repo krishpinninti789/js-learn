@@ -510,28 +510,39 @@
 
 // const betterFn = doDebounce(getData, 300);
 
-let counter = 0;
-const getData = () => {
-  console.log("Fetching the data", counter++);
+// let counter = 0;
+// const getData = () => {
+//   console.log("Fetching the data", counter++);
+// };
+
+// const doThrottle = function (fn, delay) {
+//   let timer = null;
+
+//   return function (...args) {
+//     const context = this;
+
+//     if (timer) {
+//       return;
+//     }
+
+//     timer = setTimeout(() => {
+//       fn.apply(context, args);
+//       timer = null;
+//     }, delay);
+//   };
+// };
+
+// const betterFn = doThrottle(getData, 3000);
+
+// window.addEventListener("resize", betterFn);
+
+const userData = {
+  firstName: "Kittu",
+  lastName: "Babu",
 };
 
-const doThrottle = function (fn, delay) {
-  let timer = null;
+localStorage.setItem("UserData", JSON.stringify(userData));
 
-  return function (...args) {
-    const context = this;
+const storageObj = localStorage.getItem("UserData");
 
-    if (timer) {
-      return;
-    }
-
-    timer = setTimeout(() => {
-      fn.apply(context, args);
-      timer = null;
-    }, delay);
-  };
-};
-
-const betterFn = doThrottle(getData, 3000);
-
-window.addEventListener("resize", betterFn);
+console.log(JSON.parse(storageObj));
