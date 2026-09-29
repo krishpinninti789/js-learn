@@ -9,3 +9,562 @@ function printPattern() {
 }
 
 printPattern();
+// function x() {
+//   var a = 7;
+//   return function y() {
+//     console.log(a);
+//   };
+// }
+// var z = x();
+// z();
+
+// function x() {
+//   let i = 0;
+//   setInterval(() => {
+//     i += 1;
+//     console.log(i);
+//   }, 1000);
+// }
+// x();
+
+// function x() {
+//   for (let i = 0; i <= 5; i++) {
+//     setTimeout(() => {
+//       console.log(i);
+//     }, i * 1000);
+//   }
+// }
+
+// x();
+
+// function x() {
+//   for (var i = 0; i <= 5; i++) {
+//     setTimeout(() => {
+//       console.log(i);
+//     }, i * 1000);
+//   }
+// }
+
+// x();
+
+// function x() {
+//   for (var i = 1; i <= 5; i++) {
+//     function close(x) {
+//       setTimeout(() => {
+//         console.log(x);
+//       }, x * 1000);
+//     }
+//     close(i);
+//   }
+//   console.log("hi js");
+// }
+
+// x();
+
+// function outer(b) {
+//   var a = 10;
+//   function inner() {
+//     var a = 30;
+//     console.log(a, b);
+//   }
+//   inner();
+// }
+
+// var a = 20;
+
+// outer("Hello");
+
+// console.log(a);
+
+// setTimeout(() => {
+//   console.log("Hello");
+// }, 5000);
+
+// function x() {
+//   console.log("x");
+//   y();
+// }
+
+// function y() {
+//   console.log("y");
+// }
+
+// x();
+
+// function createCounter() {
+//   let count = 0;
+
+//   return function () {
+//     count++;
+//     console.log(count);
+//   };
+// }
+
+// const counter = createCounter();
+
+// document.getElementById("clickme").addEventListener("click", counter);
+
+// console.log("start");
+
+// function x() {
+//   setTimeout(() => {
+//     console.log("Set Timeout running");
+//   }, 5000);
+// }
+
+// x();
+
+// console.log("End");
+
+// let startDate = new Date().getTime();
+// let endDate = startDate;
+// while (endDate < startDate + 10000) {
+//   endDate = new Date().getTime();
+// }
+
+// console.log("After 10 seconds");
+
+// const area = (radius) => {
+//   return Math.PI * radius * radius;
+// };
+
+// const perimeter = (radius) => {
+//   return Math.PI * 2 * radius;
+// };
+
+// const radius = [1, 2, 3, 4];
+
+// const calculate = (logic, radius) => {
+//   const result = [];
+//   for (i = 0; i < radius.length; i++) {
+//     result.push(logic(radius[i]));
+//   }
+//   return result;
+// };
+
+// console.log(calculate(area, radius));
+
+// console.log(calculate(perimeter, radius));
+
+// const nums = [1, 2, 3, 4, 100, 7];
+
+// console.log(nums.map((num) => num.toString(2)));
+
+// console.log(nums.filter((num) => num % 2 === 0));
+
+// console.log(
+//   nums.reduce((acc, curr) => {
+//     acc = acc + curr;
+//     return acc;
+//   }, 0),
+// );
+
+// console.log(
+//   nums.reduce((acc, curr) => {
+//     if (curr > acc) {
+//       acc = curr;
+//     }
+//     return acc;
+//   }, -Infinity),
+// );
+
+// const result = fetch("https://api.github.com/users/krishpinninti789");
+
+// result
+//   .then((user) => {
+//     user.json();
+//   })
+//   .then((data) => {
+//     console.log(data);
+//   });
+
+// function createOrder(cartData) {
+//   return new Promise((resolve, reject) => {
+//     if (cartData.length === 0) {
+//       reject("No cart is empty");
+//     } else {
+//       resolve({
+//         paymentid: "3321",
+//         cartData,
+//       });
+//     }
+//   });
+// }
+
+// function proceedToPayment(orderData) {
+//   return new Promise((resolve, reject) => {
+//     if (orderData.paymentid === "3321") {
+//       resolve("Proceeding to payment");
+//     } else {
+//       reject(new Error("OrderID is invalid"));
+//     }
+//   });
+// }
+
+// const cart = ["shoe", "kurta", "pencil"];
+// // const cart = [];
+
+// const result = createOrder(cart);
+
+// result
+//   .then((data) => {
+//     const res = proceedToPayment(data);
+//     res.then((data) => {
+//       console.log(data);
+//     });
+//   })
+//   .catch((err) => {
+//     console.log(err);
+//   });
+
+// function p1() {
+//   return new Promise((resolve, reject) => {
+//     if (false) {
+//       resolve("Promise 1");
+//     } else {
+//       reject(new Error("Promise 1 rejected"));
+//     }
+//   });
+// }
+
+// function p2() {
+//   return new Promise((resolve, reject) => {
+//     if (false) {
+//       setTimeout(() => {
+//         resolve("Promise 2");
+//       }, 5000);
+//     } else {
+//       reject(new Error("Promise 2 rejected"));
+//     }
+//   });
+// }
+
+// function p3() {
+//   return new Promise((resolve, reject) => {
+//     if (false) {
+//       resolve("Promise 3");
+//     } else {
+//       reject(new Error("Promise 3 rejected"));
+//     }
+//   });
+// }
+// const result1 = Promise.all([p1(), p2(), p3()]);
+// const result2 = Promise.allSettled([p1(), p2(), p3()]);
+// const result3 = Promise.race([p1(), p2(), p3()]);
+// const result4 = Promise.any([p1(), p2(), p3()]);
+
+// console.log(
+//   result1
+//     .then((data) => console.log(data))
+//     .catch((err) => {
+//       console.log(err);
+//     }),
+// );
+
+// console.log(
+//   result2
+//     .then((data) => console.log(data))
+//     .catch((err) => {
+//       console.log(err);
+//     }),
+// );
+
+// console.log(
+//   result3
+//     .then((data) => console.log(data))
+//     .catch((err) => {
+//       console.log(err);
+//     }),
+// );
+
+// console.log(
+//   result4
+//     .then((data) => console.log(data))
+//     .catch((err) => {
+//       console.log(err.errors);
+//     }),
+// );
+
+// async function getData() {
+//   return "Hello";
+// }
+// getData().then((res) => console.log(res));
+
+// function promise1() {
+//   return new Promise((res, rej) => {
+//     setTimeout(() => {
+//       res("Hello");
+//     }, 4000);
+//   });
+// }
+
+// async function exec() {
+//   const p1 = await promise1();
+//   console.log("Hello royyyy");
+
+//   const p2 = await promise1();
+//   console.log("Hello 2nd time");
+// }
+
+// exec();
+
+// const fetchData = async () => {
+//   const data = await fetch("https://api.github.com/users/krishpinninti789");
+//   const jsonValue = await data.json();
+//   console.log(jsonValue);
+// };
+
+// fetchData();
+
+// "use strict";
+
+// console.log(this);
+
+// function x() {
+//   console.log(this);
+// }
+
+// window.x();
+
+// const student = {
+//   name: "Kittu",
+//   printName: function () {
+//     console.log(this.name);
+//   },
+// };
+
+// const student2 = {
+//   name: "Vamsi",
+// };
+
+// student.printName.call(student2);
+// student.printName.call(student2);
+
+// let firstName = "Raj";
+
+// let name = {
+//   firstName: "Kittu",
+//   lastName: "Rao",
+//   printName: function (city) {
+//     let firstName = "Raj";
+//     console.log(this.firstName + " " + this.lastName + "from" + city);
+//   },
+// };
+
+// let name2 = {
+//   firstName: "Ramesh",
+//   lastName: "Kumar",
+// };
+
+// name.printName.call(name2, "Banglore");
+
+// name.printName.apply(name2, ["Hyderabad"]);
+
+// let nameFunction = name.printName.bind(name2, "Sikkim");
+
+// nameFunction();
+
+// currying using bind
+
+// let multiply = function (x, y) {
+//   console.log(x * y);
+// };
+
+// let multiplyByTwo = multiply.bind(this, 2);
+
+// multiplyByTwo(50);
+
+// function multiply(x) {
+//   function dointo(y) {
+//     console.log(x * y);
+//   }
+//   dointo(2);
+// }
+// multiply(5);
+
+// polyfill for the bind
+
+// let person = {
+//   firstName: "Kittu",
+//   lastName: "Rao",
+// };
+
+// let printName = function (status) {
+//   console.log(this.firstName + " " + this.lastName + status);
+// };
+
+// let printName2 = printName.bind(person);
+// printName2();
+
+// Function.prototype.myBind = function (...args) {
+//   let obj = this;
+//   params = args.slice(1);
+//   return function (...args2) {
+//     obj.apply(args[0], [...params, ...args2]);
+//   };
+// };
+
+// Function.prototype.myBind = function (...args) {
+//   console.log(this, ...args);
+//   let fn = this;
+//   return function (...args2) {
+//     fn.apply(...args, [...args2]);
+//   };
+// };
+
+// let printName3 = printName.myBind(person);
+// printName3("ok");
+
+// let name = {
+//   firstName: "Kittu",
+//   lastName: "Babu",
+//   myFunction: function () {
+//     console.log(this.firstName + " " + this.lastName);
+//   },
+// };
+
+// let name2 = {
+//   firstName: "Ganesh",
+//   lastName: "Murthy",
+// };
+
+// Function.prototype.myCall = function (...args) {
+//   let obj = this;
+//   obj.apply(...args);
+// };
+
+// name.myFunction.myCall(name2);
+
+// let obj1 = {
+//   fn: "Kittu",
+//   ln: "Babu",
+//   x: function () {
+//     console.log(this.fn);
+//   },
+// };
+
+// let obj2 = {
+//   fn: "Ramu",
+// };
+
+// obj2.__proto__ = obj1;
+
+// document.querySelector("#grandParent").addEventListener(
+//   "click",
+//   () => {
+//     console.log("Grandparent");
+//   },
+//   false,
+// );
+
+// document.querySelector("#parent").addEventListener(
+//   "click",
+//   (e) => {
+//     console.log("parent");
+//     e.stopPropagation();
+//   },
+//   true,
+// );
+
+// document.querySelector("#child").addEventListener(
+//   "click",
+//   () => {
+//     console.log("child");
+//   },
+//   false,
+// );
+
+// const btn = document.querySelector("#btn");
+
+// document.addEventListener("userClicked", (event) => {
+//   console.log("Custom event received!");
+//   console.log("Data:", event.detail);
+// });
+
+// btn.addEventListener("click", () => {
+//   const customEvent = new CustomEvent("userClicked", {
+//     detail: {
+//       name: "Kittu",
+//       message: "Button was clicked",
+//     },
+//   });
+//   document.dispatchEvent(customEvent);
+// });
+
+// document.querySelector("#category").addEventListener("click", (e) => {
+//   console.log(e.target);
+// });
+// console.log(document)
+
+// document.querySelector("#pan").addEventListener("keyup", (e) => {
+//   if (e.target.dataset.uppercase != undefined) {
+//     e.target.value = e.target.value.toUpperCase();
+//   }
+// });
+
+// let counter = 0;
+// const getData = () => {
+//   console.log("Fetching the data", counter++);
+// };
+
+// const doDebounce = function (fn, delay) {
+//   let timer;
+//   return function () {
+//     let context = this;
+//     args = arguments;
+//     clearTimeout(timer);
+//     timer = setTimeout(() => {
+//       getData.apply(context, args);
+//     }, delay);
+//   };
+// };
+
+// const betterFn = doDebounce(getData, 300);
+
+// let counter = 0;
+// const getData = () => {
+//   console.log("Fetching the data", counter++);
+// };
+
+// const doThrottle = function (fn, delay) {
+//   let timer = null;
+
+//   return function (...args) {
+//     const context = this;
+
+//     if (timer) {
+//       return;
+//     }
+
+//     timer = setTimeout(() => {
+//       fn.apply(context, args);
+//       timer = null;
+//     }, delay);
+//   };
+// };
+
+// const betterFn = doThrottle(getData, 3000);
+
+// window.addEventListener("resize", betterFn);
+
+// const userData = {
+//   firstName: "Kittu",
+//   lastName: "Babu",
+// };
+
+// localStorage.setItem("UserData", JSON.stringify(userData));
+
+// const storageObj = localStorage.getItem("UserData");
+
+// console.log(JSON.parse(storageObj));
+
+let sum = (a) => {
+  return (b) => {
+    if (b) {
+      return sum(a + b);
+    }
+    return a;
+  };
+};
+
+console.log(sum(1)(2)(5)(3)(4)());
