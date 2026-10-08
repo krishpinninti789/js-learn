@@ -567,4 +567,4 @@ let sum = (a) => {
   };
 };
 
-console.log(sum(1)(2)(5)(3)(4)());
+console.log(sum(1)(2)(5)(3)(4)(5)());
